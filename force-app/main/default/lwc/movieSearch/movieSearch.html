@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Movie Watchlist">
+        <div class="slds-p-around_medium">
+            <lightning-input label="Search for Movies" value={searchQuery} onchange={handleSearchInput}></lightning-input>
+            <lightning-button label="Search" onclick={handleSearch}></lightning-button>
+        </div>
+
+        <template if:true={movies}>
+            <template for:each={movies} for:item="movie">
+                <div key={movie.imdbID} class="slds-box slds-p-around_medium movie-card">
+                    <img src={movie.Poster} alt={movie.Title} class="movie-poster"/>
+                    <p><strong>{movie.Title}</strong> ({movie.Year})</p>
+                    <lightning-button label="Save" variant="brand" onclick={handleSaveMovie} data-id={movie.imdbID}></lightning-button>
+                </div>
+            </template>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+        </template>
+    </lightning-card>
+</template>

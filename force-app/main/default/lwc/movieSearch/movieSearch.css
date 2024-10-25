@@ -1,0 +1,14 @@
+.movie-card {
+    border: 1px solid #d8dde6;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.movie-poster {
+    height: 100px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
